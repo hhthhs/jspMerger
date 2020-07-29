@@ -31,4 +31,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from (select rownum rn, a.* from (select * from booklist order by bid desc) a) where rn between #{start} and #{end}	
 	</select>	
 	
+	<select id="selectCount" resultMap="bbooklistMap">
+	<![CDATA[ select * from (select * from booklist order by bcount desc) where rownum <= 4 ]]>
+	</select>
+	
 </mapper>

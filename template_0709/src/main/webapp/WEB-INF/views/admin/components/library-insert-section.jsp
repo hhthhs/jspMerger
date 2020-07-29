@@ -21,7 +21,7 @@
 						<h4>Insert Book Information</h4>
 					</div>
 					<div class="widget-inner">
-						<form action="booklistInsertdo" class="edit-profile m-b30"
+						<form action="AdmDirIns" class="edit-profile m-b30"
 							method="post">
 							<div class="">
 								<!-- 	<div class="form-group row">
@@ -29,28 +29,28 @@
 										<h3>Book Information</h3>
 									</div>
 								</div> -->
-								<div class="form-group row">
+								<!-- <div class="form-group row">
 									<label class="col-sm-2 col-form-label">Book ID</label>
 									<div class="col-sm-7">
 										<input class="form-control" name="bid" type="text">
 									</div>
-								</div>
+								</div> -->
 								<div class="form-group row">
 									<label class="col-sm-2 col-form-label">Title</label>
 									<div class="col-sm-7">
-										<input class="form-control" name="title" type="text">
+										<input class="form-control" name="title" type="text" id="title">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-2 col-form-label">Author</label>
 									<div class="col-sm-7">
-										<input class="form-control" name="author" type="text">
+										<input class="form-control" name="author" type="text" id="author">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-2 col-form-label">Publisher</label>
 									<div class="col-sm-7">
-										<input class="form-control" name="publisher" type="text">
+										<input class="form-control" name="publisher" type="text" id="publisher">
 									</div>
 								</div>
 								<!-- <div class="form-group row">
@@ -62,8 +62,8 @@
 								<div class="form-group row">
 									<label class="col-sm-2 col-form-label">ISBN</label>
 									<div class="col-sm-7">
-										<input class="form-control" name="isbn" type="text">
-										<span class="help">Just numbers. Without lines.</span>
+										<input class="form-control" name="isbn" type="text" id="isbn">
+										<span class="help">13 numbers. Without lines.</span>
 									</div>
 								</div>
 							</div>
@@ -73,7 +73,7 @@
 									<input class="form-control" name="bpages" type="text">
 								</div>
 							</div> -->
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 								<label class="col-sm-2 col-form-label">Category</label>
 								<div class="col-sm-7">
 									<input class="form-control" name="bcategory" type="text">
@@ -84,7 +84,7 @@
 								<div class="col-sm-7">
 									<input class="form-control" name="blocation" type="text">
 								</div>
-							</div>
+							</div> -->
 							<!-- <div class="form-group row">
 								<label class="col-sm-2 col-form-label">Number of Printed
 									Copies</label>
@@ -92,7 +92,7 @@
 									<input class="form-control" name="bcount" type="text">
 								</div>
 							</div> -->
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 								<label class="col-sm-2 col-form-label">Description</label>
 								<div class="col-sm-7">
 									<input class="form-control" name="descrip" type="text">
@@ -103,7 +103,7 @@
 								<div class="col-sm-7">
 									<input class="form-control" name="willdel" type="text"><span
 										class="help"> "0"= NO, "1"= YES</span>
-									<!-- <div class="col-sm-7">
+									<div class="col-sm-7">
 									<p>
 										<input type="radio" name="willdel">
 										Yes</input>
@@ -111,9 +111,9 @@
 									<p>
 										<input type="radio" name="willdel" />
 										No</input>
-									</p> -->
+									</p>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="seperator"></div>
 
@@ -125,8 +125,37 @@
 											<div class="row">
 												<div class="col-sm-2"></div>
 												<div class="col-sm-7">
-													<input type="submit" class="btn-secondry m-r5" value="Add" />
+													<input type="submit" class="btn-secondry m-r5" value="Add" id="AdmDirIns"/>
 													<input type="reset" class="btn-secondry" value="Cancel" />
+											<script>
+											$(document).ready(function(){
+												$('#AdmDirIns').click(function(){
+													if($('#title').val()==""){
+														alert("Please insert Book's Title");
+														$('#title').focus();
+														return false;
+														}
+													else if($('#author').val()==""){
+														alert("Please insert Book's Author");
+														$('#author').focus();
+														return false;
+														}
+													else if($('#publisher').val()==""){
+														alert("Please insert Publisher");
+														$('#publisher').focus();
+														return false;
+														}
+													else if($('#isbn').val()==""){
+														alert("Please insert ISBN");
+														$('#isbn').focus();
+														return false;
+														}
+													else{
+														$('#AdmDirIns').submit();
+														}
+													});
+												});
+											</script>
 												</div>
 											</div>
 										</div>
