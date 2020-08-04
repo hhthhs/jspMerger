@@ -3,9 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <script>
-	function confirm_delete() {
+	function confirm_delete(dd) {
 		var x = confirm("Are you sure you want to delete?");
-		var dd = document.getElementById("del").value;
 		if (x)
 			location.href = 'noticeDelete?nid=' + dd;
 		else
@@ -30,7 +29,7 @@
 					<div class="wc-title">
 						<h4>All Notices</h4>
 					</div>
-					<div class="widget-inner"></div>
+		<!-- 			<div class="widget-inner"></div> -->
 					<br />
 					<main>
 						<div class="container-fluid">
@@ -70,7 +69,7 @@
 															<%-- <button type="button" class="btn-secondry m-r5"
 																onclick="location.href='noticeDelete?nid=${itm.nid}'">Delete</button> --%>
 															<button type="button" class="btn-secondry m-r5" id="del"
-																onclick="return confirm_delete();" value="${itm.nid}">Delete</button></td>
+																onclick="confirm_delete('${itm.nid}')" value="${itm.nid}">Delete</button></td>
 													</tr>
 												</c:forEach>
 											</tbody>

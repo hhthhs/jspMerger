@@ -42,7 +42,7 @@
 								<div class="company-image"></div>
 							</div>
 						</section>
-						<section class="services-offering">
+						<!-- <section class="services-offering">
 							<div class="container">
 								<div class="center-content">
 									<h2 class="section-title">SERVICE WE ARE OFFERING</h2>
@@ -248,7 +248,7 @@
 									<div class="clearfix"></div>
 								</div>
 							</div>
-						</section>
+						</section> -->
 						<!-- <section class="who-we-are">
 							<div class="company-info">
 								<div class="container">
@@ -520,8 +520,8 @@
 														Scott Fitzgerald</span> <span class="author"><strong>ISBN:</strong>
 														9781581573268</span>
 													<div class="rating">
-														<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-														<span>☆</span>
+														<span>â</span> <span>â</span> <span>â</span> <span>â</span>
+														<span>â</span>
 													</div>
 													<p>It is a long established fact that a reader will be
 														distracted by the readable content of a page when looking
@@ -555,8 +555,8 @@
 														Scott Fitzgerald</span> <span class="author"><strong>ISBN:</strong>
 														9781581573268</span>
 													<div class="rating">
-														<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-														<span>☆</span>
+														<span>â</span> <span>â</span> <span>â</span> <span>â</span>
+														<span>â</span>
 													</div>
 													<p>It is a long established fact that a reader will be
 														distracted by the readable content of a page when looking
@@ -590,8 +590,8 @@
 														Scott Fitzgerald</span> <span class="author"><strong>ISBN:</strong>
 														9781581573268</span>
 													<div class="rating">
-														<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-														<span>☆</span>
+														<span>â</span> <span>â</span> <span>â</span> <span>â</span>
+														<span>â</span>
 													</div>
 													<p>It is a long established fact that a reader will be
 														distracted by the readable content of a page when looking
@@ -625,8 +625,8 @@
 														Scott Fitzgerald</span> <span class="author"><strong>ISBN:</strong>
 														9781581573268</span>
 													<div class="rating">
-														<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-														<span>☆</span>
+														<span>â</span> <span>â</span> <span>â</span> <span>â</span>
+														<span>â</span>
 													</div>
 													<p>It is a long established fact that a reader will be
 														distracted by the readable content of a page when looking

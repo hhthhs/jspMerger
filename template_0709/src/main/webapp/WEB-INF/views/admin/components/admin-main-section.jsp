@@ -3,9 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <script>
-	function confirm_delete() {
+	function confirm_delete(dd) {
 		var x = confirm("Are you sure you want to delete?");
-		var dd = document.getElementById("del").value;
 		if (x)
 			location.href='badminDelete?email='+dd;
 		else
@@ -30,7 +29,7 @@
 						<div class="wc-title">
 							<h4>All Admins</h4>
 						</div>
-						<div class="widget-inner"></div>
+					<!-- 	<div class="widget-inner"></div> -->
 						<br />
 						<main>
 							<div class="container-fluid">
@@ -75,8 +74,11 @@
 														<td>${itm.pos }</td>
 														<td><button type="button" class="btn-secondry m-r5" onclick="location.href='badminUpdate?email=${itm.email}'">Update</button>&nbsp;
 													<%-- 	<button type="button" class="btn-secondry m-r5" onclick="location.href='badminDelete?email=${itm.email}'">Delete</button> --%>
+														<c:set var="eml" value="${itm.email }"/>
+														<c:if test="${sessionScope.email ne eml}">
 														<button type="button" class="btn-secondry m-r5" id="del"
-																onclick="return confirm_delete();" value="${itm.email }">Delete</button>
+																onclick="confirm_delete('${itm.email}')" value="${itm.email }">Delete</button>
+														</c:if>
 														</td>
 													</tr>
 													</c:forEach>

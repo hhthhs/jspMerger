@@ -29,7 +29,7 @@ public class AladdinOpenAPI {
 		System.out.println("");
 	}
 	static int findBid() throws Exception{
-		pstmt=conn.prepareStatement("select count(*) from booklist");
+		pstmt=conn.prepareStatement("select max(to_number(bid)) from booklist");
 		int ret = 0;
 		rs=pstmt.executeQuery();
 		while(rs.next()) ret=rs.getInt(1);
@@ -250,6 +250,8 @@ public class AladdinOpenAPI {
 		boolean flag = false;
 		
 		for (Item item : api.Items) {
+			System.out.println("Title : "+item.Title
+					+" / Author : "+item.Author + " / publisher : "+item.Publisher + " / ISBN : " + item.Isbn13);
 			if ((item.Author).contains(author)) {
 				if ((item.Publisher).contains(publisher)) {
 					System.out.println(item.Isbn13);
@@ -266,7 +268,7 @@ public class AladdinOpenAPI {
 							pstmt.setString(5, item.Isbn13);
 							pstmt.setString(6, item.CategoryName);
 							pstmt.setString(7, getDeciDiv(item));
-							pstmt.setInt(8, 1);
+							pstmt.setInt(8, 0);
 							pstmt.setString(9, item.Description);
 							pstmt.setInt(10, 0);
 							pstmt.setString(11, item.Cover);

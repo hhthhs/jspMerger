@@ -43,29 +43,70 @@
 															class="input-text">
 													</p>
 													<p class="form-row input-required">
-														<label> <span class="first-letter">Birth</span> <span
+														<label> <span class="first-letter">Date of Birth (YY-MM-DD)</span> <span
 															class="second-letter">*</span>
 														</label> <input type="text" id="birth" name="birth"
 															class="input-text">
 													</p>
 													<p class="form-row input-required">
-														<label> <span class="first-letter">Phone Number</span> <span
+														<label> <span class="first-letter">Phone Number (Only numbers)</span> <span
 															class="second-letter">*</span>
 														</label> <input type="text" id="phone" name="phone"
 															class="input-text">
 													</p>
 													<p class="form-row input-required">
-														<label> <span class="first-letter">Address</span> <span
+														<label> <span class="first-letter">Address (City, Country)</span> <span
 															class="second-letter">*</span>
 														</label> <input type="text" id="address" name="address"
 															class="input-text">
 													</p>
+													
+													<!-- <p class=“form-row input-required”>
+														<label> <span class=“first-letter”>Password</span>
+															<span class=“second-letter”>*</span>
+														</label> <input type=“password” id=“passwd” name=“passwd”
+															class=“input-text”>
+													</p>
+													<p class=“form-row input-required”>
+														<label> <span class=“first-letter”>Repeat
+																Password</span> <span class=“second-letter”>*</span>
+														</label> <input type=“password” id=“passwdre” name=“passwdre”
+															class=“input-text”>
+													</p>
+													<p class=“form-row input-required”>
+														<label> <span class=“first-letter”>Name</span> <span
+															class=“second-letter”>*</span>
+														</label> <input type=“text” id=“name” name=“name”
+															class=“input-text”>
+													</p>
+													<p class=“form-row input-required”>
+														<label> <span class=“first-letter”>Birth Date </span> <span class=“first-letter”>(YY-MM-DD)</span><span
+															class=“second-letter”>*</span>
+														</label> <input type=“text” id=“birth” name=“birth”
+															class=“input-text”>
+													</p>
+												
+													<p class=“form-row input-required”>
+														<label> <span class=“first-letter”>Phone
+																Number </span><span class=“first-letter”>(Only numbers)</span> <span class=“second-letter”>*</span>
+														</label> <input type=“text” id=“phone” name=“phone”
+															class=“input-text”>
+													</p>
+													<p class=“form-row input-required”>
+														<label> <span class=“first-letter”>City, Country</span>
+															<span class=“second-letter”>*</span>
+																
+														</label> <input type=“text” id=“address” name=“address”
+															class=“input-text”>
+													</p> -->
+													
 													<!-- <p>
 														<select name="authority">
 															<option value="ROLE_USER">ROLE_USER</option>
 															<option value="ROLE_ADMIN">ROLE_ADMIN</option>
 														</select>
 													</p> -->
+													<input type="hidden" name="authority" value="ROLE_USER">
 													<div class="clear"></div>
 													<input type="submit" value="Signup" name="signup" id="signup"
 														class="button btn btn-default">
@@ -89,6 +130,21 @@
 														$('#passwdre').focus();
 														return false;
 														}
+													else if($('#name').val()==""){
+														alert("Please insert Your Name.");
+														$('#name').focus();
+														return false;
+														}
+													else if($('#birth').val()==""){
+														alert("Please insert Your Birthday.");
+														$('#birth').focus();
+														return false;
+														}
+													else if($('#address').val()==""){
+														alert("Please insert Your Address.");
+														$('#address').focus();
+														return false;
+														}
 													else if($('#phone').val()==""){
 														alert("Please insert Your phone number.");
 														$('#phone').focus();
@@ -104,7 +160,8 @@
 																return false;
 															}
 														}
-														$('#send').submit();
+														alert("Registered Successfully!");
+														$('#signup').submit();
 														}
 													});
 												});

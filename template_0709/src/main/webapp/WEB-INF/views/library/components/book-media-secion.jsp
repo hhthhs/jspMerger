@@ -12,9 +12,9 @@
 						<jsp:include page="search-section.jsp" flush="false" />
 					</div>
 					<div class="row">
-						<div class="col-md-9 col-md-push-3">
+						<!-- <div class="col-md-9 col-md-push-3"> -->
 							<c:forEach var="itm" items="${bbooklist }">
-								<div class="books-list">
+								<div class="books-list" style="padding-right:100px;padding-left:100px;">
 									<article>
 										<div class="single-book-box">
 											<div class="post-thumbnail">
@@ -57,33 +57,35 @@
 							</c:forEach>
 
 							<div style="display: block; text-align: center;">
-								<c:if test="${paging.startPage != 1 }">
+								<c:if test="${paging.startPage > 1 }">
 									<a
 										href="${pageContext.request.contextPath}/user/BbooklistMain?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 								</c:if>
-								<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
-									var="p">
-									<c:choose>
-										<c:when test="${p == paging.nowPage }">
-											<b>${p }</b>
-										</c:when>
-										<c:when test="${p != paging.nowPage }">
-											<a
-												href="${pageContext.request.contextPath}/user/BbooklistMain?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
-										</c:when>
-									</c:choose>
-								</c:forEach>
+								<c:if test="${paging.startPage>=1 }">
+									<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
+										var="p">
+										<c:choose>
+											<c:when test="${p == paging.nowPage }">
+												<b>${p }</b>
+											</c:when>
+											<c:when test="${p != paging.nowPage }">
+												<a
+													href="${pageContext.request.contextPath}/user/BbooklistMain?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+											</c:when>
+										</c:choose>
+									</c:forEach>
+								</c:if>
 								<c:if test="${paging.endPage != paging.lastPage}">
 									<a
 										href="${pageContext.request.contextPath}/user/BbooklistMain?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 								</c:if>
-							</div>
+							<!-- </div> -->
 						</div>
-						<div class="col-md-3 col-md-pull-9">
+						<%-- <div class="col-md-3 col-md-pull-9">
 							<aside id="secondary" class="sidebar widget-area"
 								data-accordion-group>
 								<div class="widget widget_recent_entries">
-									<h4 class="widget-title">Visited Items</h4>
+									<h4 class="widget-title">Browsing History</h4>
 									<ul>
 										<li>
 											<figure>
@@ -131,7 +133,7 @@
 									<div class="clearfix"></div>
 								</div>
 							</aside>
-						</div>
+						</div> --%>
 					</div>
 				</div>
 				<br> <br>

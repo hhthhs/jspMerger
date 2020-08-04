@@ -3,11 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <script>
-	function confirm_delete() {
+	function confirm_delete(data) {
 		var x = confirm("Are you sure you want to delete?");
-		var dd = document.getElementById("del").value;
+		
 		if (x)
-			location.href = 'ordersDeletedo?ordernum=' + dd;
+			location.href = 'ordersDeletedo?ordernum=' + data;
 		else
 			return false;
 	}
@@ -30,7 +30,7 @@
 					<div class="wc-title">
 						<h4>List of Ordered Books</h4>
 					</div>
-					<div class="widget-inner"></div>
+<!-- 					<div class="widget-inner"></div> -->
 					<br />
 					<main>
 						<div class="container-fluid">
@@ -53,7 +53,7 @@
 													<th>Title</th>
 													<!-- <th>ISBN</th> -->
 													<th>Price</th>
-													<th>Unit</th>
+													<!-- <th>Unit</th> -->
 													<!-- <th>Extra Costs</th> -->
 													<!-- <th>descript</th> -->
 													<th>TotalCost
@@ -88,7 +88,7 @@
 														<td><a href="ordersDetail?ordernum=${itm.ordernum }">${itm.title }</a></td>
 														<%-- 	<td>${itm.isbn }</td> --%>
 														<td>${itm.price }</td>
-														<td>${itm.unit }</td>
+														<%-- <td>${itm.unit }</td> --%>
 														<%-- <td>${itm.extracost }</td>
 														<td>${itm.descript }</td> --%>
 														<td>${itm.totalcost }</td>
@@ -98,7 +98,7 @@
 															<%-- 												<button type="button" class="btn-secondry m-r5" onclick="location.href='ordersDeletedo?ordernum=${itm.ordernum}'">Delete</button> --%>
 
 															<button type="button" class="btn-secondry m-r5" id="del"
-																onclick="return confirm_delete();"
+																onclick="confirm_delete(${itm.ordernum})"
 																value="${itm.ordernum}">Delete</button></td>
 													</tr>
 												</c:forEach>

@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.example</groupId>
-	<artifactId>security</artifactId>
-	<name>study</name>
+	<groupId>com.mylibrary</groupId>
+	<artifactId>book</artifactId>
+	<name>template_0709</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -23,6 +23,19 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.10.0</version>
+		</dependency>
+		
+		<!-- memcache -->
+		<dependency>
+		    <groupId>com.google.code.simple-spring-memcached</groupId>
+		    <artifactId>simple-spring-memcached</artifactId>
+		    <version>4.1.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.code.simple-spring-memcached</groupId>
+		    <artifactId>xmemcached-provider</artifactId>
+		    <version>4.1.1</version>
 		</dependency>
 		
 		<!-- Spring -->

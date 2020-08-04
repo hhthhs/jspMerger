@@ -1,16 +1,20 @@
 package com.mylibrary.book.admin.vo;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
+import com.google.code.ssm.api.CacheKeyMethod;
+
 @Component
-public class IncomeVO {
+public class IncomeVO implements Serializable{
 
 	private int incomenum;
 	private String idate;
 	private int price;
 	private String itype;
 	
-	
+	@CacheKeyMethod
 	public int getIncomenum() {
 		return incomenum;
 	}
@@ -40,5 +44,19 @@ public class IncomeVO {
 	public String toString() {
 		return "IncomeVO [incomenum=" + incomenum + ", idate=" + idate + ", price=" + price + ", itype=" + itype + "]";
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof IncomeVO) {
+			IncomeVO temp = (IncomeVO) obj;
+			return this.incomenum==temp.incomenum;
+		}
+		return false;
+	}
+	@Override
+	public int hashCode() {
+		return incomenum+idate.hashCode();
+	}
+	
+	
 	
 }

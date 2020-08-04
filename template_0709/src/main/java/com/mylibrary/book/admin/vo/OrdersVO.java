@@ -1,21 +1,26 @@
 package com.mylibrary.book.admin.vo;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
+import com.google.code.ssm.api.CacheKeyMethod;
+
 @Component
-public class OrdersVO {
+public class OrdersVO implements Serializable{
 
 	private int ordernum;
 	private String odate;
 	private int txnum;
 	private String title;
-	private int isbn;
+	private String isbn;
 	private int price;
 	private int unit;
 	private int extracost;
 	private String descript;
 	private int totalcost;
 	
+	@CacheKeyMethod
 	public int getOrdernum() {
 		return ordernum;
 	}
@@ -40,10 +45,10 @@ public class OrdersVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	public int getPrice() {
@@ -82,7 +87,17 @@ public class OrdersVO {
 				+ ", isbn=" + isbn + ", price=" + price + ", unit=" + unit + ", extracost=" + extracost + ", descript="
 				+ descript + ", totalcost=" + totalcost + "]";
 	}
-	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof OrdersVO) {
+			OrdersVO temp = (OrdersVO) obj;
+			return this.ordernum==temp.getOrdernum();
+		}
+		return false;
+	}
+	@Override
+	public int hashCode() {
+		return ordernum + odate.hashCode();
+	}
 	
 }

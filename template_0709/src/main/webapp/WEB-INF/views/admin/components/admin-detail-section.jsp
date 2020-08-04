@@ -18,8 +18,12 @@
 		<div class="db-breadcrumb">
 			<h4 class="breadcrumb-title"></h4>
 			<ul class="db-breadcrumb-list">
-				<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-				<li>orders update</li>
+				<!-- <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+				<li>orders update</li> -->
+				<li><a href="/book/admin/index"><!-- <i class="fa fa-home"></i> -->Menu</a></li>
+					<li>Admin</li>
+					<li><a href="/book/admin/badminMain">Admin List</a></li>
+					<li>Details</li>
 			</ul>
 		</div>
 		<div class="row">
@@ -53,13 +57,13 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<%-- <div class="form-group row">
 								<label class="col-sm-2 col-form-label">Passwd</label>
 								<div class="col-sm-7">
 									<input class="form-control" type="text" value="${itm.passwd }"
 										name="passwd" readonly="readonly">
 								</div>
-							</div>
+							</div> --%>
 
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Phone</label>
@@ -110,7 +114,7 @@
 										<button type="button" class="btn-secondry m-r5"
 											onclick="location.href='badminUpdate?email=${itm.email}'">Update</button>
 											<button type="button" class="btn-secondry m-r5" id="del"
-																onclick="return confirm_delete();" value="${itm.email }">Delete</button>
+																onclick="confirm_delete()" value="${itm.email }">Delete</button>
 										<button type="button" class="btn-secondry m-r5"
 											onclick="location.href='badminMain'">Go Back</button>
 									</div>

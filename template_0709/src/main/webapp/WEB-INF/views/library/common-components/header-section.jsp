@@ -23,9 +23,9 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="topbar-info">
-										<a href="tel:+61-3-8376-6284"><i class="fa fa-phone"></i>+61-3-8376-6284</a>
-										<span>/</span> <a href="mailto:support@libraria.com"><i
-											class="fa fa-envelope"></i>support@libraria.com</a>
+										<a href="tel:+61-3-8376-6284"><i class="fa fa-phone"></i>+82-8376-6284</a>
+										<span>/</span> <a href="mailto:libraria@libraria.com"><i
+											class="fa fa-envelope"></i>libraria@libraria.com</a>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -37,8 +37,10 @@
 									
 										<c:choose>
 											<c:when test="${sessionScope.email != null }">
-											<a href="logout"><i class="fa fa-lock"></i>${email }</a>
+											<%-- <a><i class="fa fa-lock"></i>${email }</a> --%>
+											<a href="logout"><i class="fa fa-lock"></i>${email }(Logout)</a>
 											<c:if test="${role !='admin'}">
+											<span>|</span>
 												<a href="mypage"><i class="fa fa-lock"></i>mypage</a>
 											</c:if>
 											
@@ -47,8 +49,8 @@
 											<a href="login"><i class="fa fa-lock"></i>Login / Register</a>
 											</c:when>
 										</c:choose>
-										<span>|</span>
-										<div class="header-cart dropdown">
+										<!-- <span>|</span> -->
+										<%-- <div class="header-cart dropdown">
 											<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 												<i class="fa fa-shopping-cart"></i> <small>0</small>
 											</a>
@@ -100,7 +102,7 @@
 													<a href="checkout.html" class="btn btn-primary">Checkout</a>
 												</div>
 											</div>
-										</div>
+										</div> --%>
 									</div>
 								</div>
 							</div>
@@ -111,10 +113,10 @@
 									class="dropdown-toggle disabled" href="index">Home</a></li>
 								<li class="dropdown"><a data-toggle="dropdown"
 									class="dropdown-toggle disabled"
-									href="BbooklistMain">Books &amp; Media</a></li>
+									href="BbooklistMain">Books</a></li>
 								<li class="dropdown"><a data-toggle="dropdown"
 									class="dropdown-toggle disabled"
-									href="userNoticeMain">News &amp; Events</a></li>
+									href="userNoticeMain">Notice</a></li>
 								<li><a href="about">About us</a></li>
 								<li><a href="contact">Contact</a></li>
 							</ul>
@@ -135,8 +137,7 @@
 									<li><a href="home-v2.html">Home V2</a></li>
 									<li><a href="home-v3.html">Home V3</a></li>
 								</ul> --></li>
-							<li><a href="bookList">Books &amp;
-									Media</a>
+							<li><a href="BbooklistMain">Books</a>
 								<!-- <ul>
 									<li><a href="books-media-list-view.html">Books &amp;
 											Media List View</a></li>
@@ -149,8 +150,7 @@
 									<li><a href="books-media-detail-v2.html">Books &amp;
 											Media Detail V2</a></li>
 								</ul> --></li>
-							<li><a href="userNoticeMain">News &amp;
-									Events</a>
+							<li><a href="userNoticeMain">Notice</a>
 								<!-- <ul>
 									<li><a href="news-events-list-view.html">News &amp;
 											Events List View</a></li>
@@ -171,6 +171,18 @@
 								</ul></li> -->
 							<li><a href="about">About us</a></li>
 							<li><a href="contact">Contact</a></li>
+							<c:choose>
+								<c:when test="${sessionScope.email != null }">
+								<%-- <a><i class="fa fa-lock"></i>${email }</a> --%>
+								<li><a href="logout">${email }(Logout)</a></li>
+								<c:if test="${role !='admin'}">
+									<li><a href="mypage">mypage</a></li>
+								</c:if>
+								</c:when>
+								<c:when test="${sessionScope.email == null }">
+								<li><a href="login">Login / Register</a></li>
+								</c:when>
+							</c:choose>
 						</ul>
 					</div>
 				</div>

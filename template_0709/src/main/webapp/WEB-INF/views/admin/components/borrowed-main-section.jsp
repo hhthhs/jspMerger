@@ -3,9 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <script>
-	function confirm_delete() {
+	function confirm_delete(dd) {
 		var x = confirm("Are you sure you want to delete?");
-		var dd = document.getElementById("del").value;
 		if (x)
 			location.href = 'borrowedDelete?rentid=' + dd;
 		else
@@ -33,7 +32,7 @@
 					<div class="wc-title">
 						<h4>All Borrowed Books</h4>
 					</div>
-					<div class="widget-inner"></div>
+<!-- 					<div class="widget-inner"></div> -->
 					<br />
 					<main>
 						<div class="container-fluid">
@@ -55,7 +54,7 @@
 													<th>Book ID</th>
 													<th>Issue Date</th>
 													<th>Expiration Date</th>
-													<th>Return Date</th>
+													<!-- <th>Return Date</th> -->
 													<!-- <th>User Block Date</th>Shouldn't this be in User's DB? -->
 													<th>Extention
 													<th>
@@ -83,7 +82,7 @@
 														<td>${itm.renbid }</td>
 														<td>${itm.isdate }</td>
 														<td>${itm.exdate }</td>
-														<td>${itm.retdate }</td>
+														<%-- <td>${itm.retdate }</td> --%>
 														<%-- 	<td>${itm.bldate }</td> --%>
 														<td>${itm.isExpanded }</td>
 
@@ -91,7 +90,7 @@
 															<%-- <button type="button" class="btn-secondry m-r5" onclick="location.href='borrowedUpdate?rentid=${itm.rentid}'">Update</button>&nbsp; --%>
 															<%-- <button type="button" class="btn-secondry m-r5" onclick="location.href='borrowedDelete?rentid=${itm.rentid }'">Delete</button> --%>
 															<button type="button" class="btn-secondry m-r5" id="del"
-																onclick="return confirm_delete();"
+																onclick="confirm_delete(${itm.rentid})"
 																value="${itm.rentid }">Delete</button>
 														</td>
 													</tr>

@@ -1,6 +1,5 @@
-<!-- Start: Page Banner -->
 <section class="page-banner services-banner">
-	<div class="container">
+	<!-- <div class="container">
 		<div class="banner-header">
 			<h2>Page</h2>
 			<span class="underline center"></span>
@@ -11,6 +10,5 @@
 				<li>Page Man</li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 </section>
-<!-- End: Page Banner -->

@@ -1,6 +1,7 @@
 package com.mylibrary.book.admin.service.reserved;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mylibrary.book.admin.vo.ReservedVO;
 
@@ -10,4 +11,6 @@ public interface ReservedService {
 	public void insertReserved(ReservedVO vo); //쓰기
 	public int updateReserved(int resid);  //수정
 	public int deleteReserved(String resid);  //삭제
+	public void deleteReservedByEmail(String resemail);
+	public List<Map<String,String>> showReserveList();
 }
